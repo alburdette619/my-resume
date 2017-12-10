@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
 import AboutMeView from './aboutMe';
 import EducationView from './education';
@@ -42,6 +42,7 @@ class MainContent extends Component {
           buttons={['About Me', 'Work Experience', 'Education']}
           selectedIndex={this.state.selectedIndex}
           onPress={selectedIndex => this.setState({ selectedIndex })}
+          textStyle={Platform.OS === 'ios' ? { fontSize: 14 } : null}
         />
         {content}
       </View>
