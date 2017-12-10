@@ -49,10 +49,10 @@ const aboutMe = {
       turning away from that market.  That's when a friend got me my current job at Market America.
       There I started with about a year of native Android development before moving on to
       JavaScript.  It seemed like a breath of fresh air after the verbosity of Java.  I haven't
-      looked back since.  In late 2016 my direct report, Trevor, asked me to create a project in
-      React Native.  I wound up making just a silly app not really knowing what I was doing but I
-      very much enjoyed the framework.  Together with Trevor, we started migrating the team over to
-      learning React Native and got the go ahead to green field our apps.
+      looked back since.  In late 2016 my direct report, Trevor (@trevorbrindlejs), asked me to 
+      create a project in React Native.  I wound up making small one off app not quite knowing what
+      I was doing but I very much enjoyed the framework.  Together with Trevor, we started migrating
+      the team over to learning React Native and got the go ahead to green field our apps.
     `,
     `
       React Native is the first framework in a while that has made me want to get more involved. I
