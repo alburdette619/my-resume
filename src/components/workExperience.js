@@ -15,18 +15,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    fontSize: 16,
+    fontSize: 14,
     marginLeft: 10,
   },
   rightTitle: {
     fontSize: 12,
     marginRight: 5,
   },
-  listItem: {
-    marginHorizontal: 10,
-  },
   listContainer: {
     marginTop: 0,
+  },
+  subtitle: {
+    color: 'gray',
+    fontWeight: 'normal',
   },
 });
 
@@ -48,8 +49,8 @@ const WorkExperienceView = () => (
               </View>
               }
             subtitle={exp.points.map(point => `\u2023 ${point}`).join('\n')}
+            subtitleStyle={styles.subtitle}
             subtitleNumberOfLines={6}
-            containerStyle={styles.listItem}
           />
         ))
       }
