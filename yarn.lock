@@ -4904,9 +4904,9 @@ react-native-branch@2.0.0-beta.3:
   version "2.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.0.0-beta.3.tgz#2167af86bbc9f964bd45bd5f37684e5b54965e32"
 
-react-native-elements@^0.18.5:
+"react-native-elements@https://github.com/alburdette619/react-native-elements":
   version "0.18.5"
-  resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-0.18.5.tgz#9d9a584395fea63f8cad7904fb21c1eac7cc63cf"
+  resolved "https://github.com/alburdette619/react-native-elements#ddbeaf68a564f4fc855a1e9c0f478b7c4f72c0b9"
   dependencies:
     lodash.isempty "^4.4.0"
     lodash.times "^4.3.2"
