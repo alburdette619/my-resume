@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: 40,
   },
   bio: {
     fontSize: 16,
@@ -30,18 +29,24 @@ const linkToSocial = (socialEndpoint) => {
   Linking.openURL(socialEndpoint.link);
 };
 
+const renderSocialIcon = endpoint => (<SocialIcon
+  key={endpoint.type}
+  type={endpoint.type}
+  onPress={() => linkToSocial(endpoint)}
+/>);
+
 const AboutMeView = () => (
   <View style={styles.container}>
     <Text style={styles.name}>Adam Burdette</Text>
     <View style={styles.socialContainer}>
       {
-      aboutMe.socialInfo.map(endpoint =>
-        (<SocialIcon
-          key={endpoint.type}
-          type={endpoint.type}
-          onPress={() => linkToSocial(endpoint)}
-        />))
-    }
+      aboutMe.professionalLinks.map(endpoint => renderSocialIcon(endpoint))
+      }
+    </View>
+    <View style={[styles.socialContainer, { width: '60%', alignSelf: 'center' }]}>
+      {
+      aboutMe.socialLinks.map(endpoint => renderSocialIcon(endpoint))
+      }
     </View>
     <ScrollView>
       <Text style={styles.bio}>

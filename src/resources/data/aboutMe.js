@@ -1,5 +1,5 @@
 const aboutMe = {
-  socialInfo: [
+  professionalLinks: [
     {
       type: 'twitter',
       link: 'https://twitter.com/alburdette619',
@@ -13,9 +13,28 @@ const aboutMe = {
       link: 'https://www.linkedin.com/in/adam-burdette-b11bb212/',
     },
     {
+      type: 'envelope',
+      link: 'mailto:alburdet619@gmail.com',
+    },
+    {
+      type: 'stack-overflow',
+      link: 'https://stackoverflow.com/users/5792003/adam-burdette',
+    },
+  ],
+  socialLinks: [
+    {
+      type: 'reddit-alien',
+      link: 'https://www.reddit.com/user/RavenStorms619/',
+    },
+    {
+      type: 'steam',
+      link: 'http://steamcommunity.com/profiles/76561198104194625/',
+    },
+    {
       type: 'instagram',
       link: 'https://www.instagram.com/alburdette619/',
     },
+
   ],
   bio: [
     `
