@@ -4,7 +4,25 @@ import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 import aboutMe from '../resources/data/aboutMe';
 
 const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 10,
+    flex: 1,
+  },
+  name: {
+    fontSize: 36,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    marginVertical: 10,
+  },
   socialContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 40,
+  },
+  bio: {
+    fontSize: 16,
+    marginVertical: 10,
   },
 });
 
@@ -13,26 +31,9 @@ const linkToSocial = (socialEndpoint) => {
 };
 
 const AboutMeView = () => (
-  <View style={{ marginHorizontal: 10, flex: 1 }}>
-    <Text style={
-      {
-        fontSize: 36,
-        fontWeight: 'bold',
-        alignSelf: 'center',
-        marginVertical: 10,
-      }
-    }
-    >Adam Burdette
-    </Text>
-    <View style={
-      {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginHorizontal: 40,
-      }
-    }
-    >
+  <View style={styles.container}>
+    <Text style={styles.name}>Adam Burdette</Text>
+    <View style={styles.socialContainer}>
       {
       aboutMe.socialInfo.map(endpoint =>
         (<SocialIcon
@@ -43,7 +44,7 @@ const AboutMeView = () => (
     }
     </View>
     <ScrollView>
-      <Text style={{ fontSize: 16, marginVertical: 10 }}>
+      <Text style={styles.bio}>
         {aboutMe.bio.map(para => para.replace(/\s+/g, ' ').trim()).join('\n\n')}
       </Text>
     </ScrollView>
