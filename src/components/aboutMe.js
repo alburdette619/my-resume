@@ -43,7 +43,7 @@ const AboutMeView = () => (
       aboutMe.professionalLinks.map(endpoint => renderSocialIcon(endpoint))
       }
     </View>
-    <View style={[styles.socialContainer, { width: '60%', alignSelf: 'center' }]}>
+    <View style={[styles.socialContainer, { width: '58.5%', alignSelf: 'center' }]}>
       {
       aboutMe.socialLinks.map(endpoint => renderSocialIcon(endpoint))
       }
