@@ -1,5 +1,12 @@
 {
   "expo": {
+    "version": "1.0.0",
+    "name": "My Resume",
+    "description": "A React Native implementation of my resume.",
+    "slug": "my-resume",
+    "githubUrl": "https://github.com/alburdette619/my-resume",
+    "orientation": "portrait",
+    "icon": "./src/resources/images/icon.png",
     "sdkVersion": "23.0.0"
   }
 }
