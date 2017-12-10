@@ -22,11 +22,17 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginRight: 5,
   },
+  listItem: {
+    marginHorizontal: 10,
+  },
+  listContainer: {
+    marginTop: 0,
+  },
 });
 
 const WorkExperienceView = () => (
   <ScrollView>
-    <List >
+    <List containerStyle={styles.listContainer}>
       {
         workExperience.map(exp => (
           <ListItem
@@ -43,6 +49,7 @@ const WorkExperienceView = () => (
               }
             subtitle={exp.points.map(point => `\u2023 ${point}`).join('\n')}
             subtitleNumberOfLines={6}
+            containerStyle={styles.listItem}
           />
         ))
       }

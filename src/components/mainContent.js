@@ -5,10 +5,18 @@ import AboutMeView from './aboutMe';
 import EducationView from './education';
 import WorkExperienceView from './workExperience';
 
+const styles = {
+  container: {
+    flex: 1,
+  },
+  buttonText: {
+    fontSize: Platform.OS === 'ios' ? 12 : 14,
+  },
+};
+
 class MainContent extends Component {
   constructor(props) {
     super(props);
-
 
     this.state = {
       selectedIndex: 0,
@@ -37,12 +45,12 @@ class MainContent extends Component {
     const content = this.getContents();
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         <ButtonGroup
           buttons={['About Me', 'Work Experience', 'Education']}
           selectedIndex={this.state.selectedIndex}
           onPress={selectedIndex => this.setState({ selectedIndex })}
-          textStyle={Platform.OS === 'ios' ? { fontSize: 14 } : null}
+          textStyle={styles.buttonText}
         />
         {content}
       </View>

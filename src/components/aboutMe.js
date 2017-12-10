@@ -1,20 +1,21 @@
 import React from 'react';
 import { Divider, SocialIcon } from 'react-native-elements';
-import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Linking, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import aboutMe from '../resources/data/aboutMe';
 
-const socialIconWidth = 52;
+const socialIconSize = Platform.OS === 'ios' ? 32 : 36;
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
     flex: 1,
+  },
+  horizontalMargin: {
+    marginHorizontal: 10,
   },
   name: {
     fontSize: 36,
     fontWeight: 'bold',
     alignSelf: 'center',
-    marginVertical: 10,
   },
   socialContainer: {
     flexDirection: 'row',
@@ -22,9 +23,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
+  socialIcon: {
+    width: socialIconSize,
+    height: socialIconSize,
+  },
   bio: {
     fontSize: 16,
-    marginVertical: 10,
+    marginTop: 5,
+  },
+  divider: {
+    backgroundColor: 'gray',
+    marginVertical: 5,
   },
 });
 
@@ -36,24 +45,21 @@ const renderSocialIcon = endpoint => (<SocialIcon
   key={endpoint.type}
   type={endpoint.type}
   onPress={() => linkToSocial(endpoint)}
+  iconSize={socialIconSize / 2}
+  style={styles.socialIcon}
 />);
 
 const AboutMeView = () => (
   <View style={styles.container}>
     <Text style={styles.name}>Adam Burdette</Text>
-    <View style={styles.socialContainer}>
-      {
-      aboutMe.professionalLinks.map(endpoint => renderSocialIcon(endpoint))
-      }
-    </View>
-    <View style={[styles.socialContainer, { marginHorizontal: socialIconWidth }]}>
+    <View style={[styles.socialContainer, styles.horizontalMargin]}>
       {
       aboutMe.socialLinks.map(endpoint => renderSocialIcon(endpoint))
       }
     </View>
-    <Divider style={{ backgroundColor: 'gray', marginVertical: 5 }} />
+    <Divider style={[styles.divider, styles.horizontalMargin]} />
     <ScrollView>
-      <Text style={styles.bio}>
+      <Text style={[styles.bio, styles.horizontalMargin]}>
         {aboutMe.bio.map(para => para.replace(/\s+/g, ' ').trim()).join('\n\n')}
       </Text>
     </ScrollView>
