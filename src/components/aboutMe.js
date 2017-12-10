@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialIcon } from 'react-native-elements';
+import { Divider, SocialIcon } from 'react-native-elements';
 import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 import aboutMe from '../resources/data/aboutMe';
 
@@ -48,6 +48,7 @@ const AboutMeView = () => (
       aboutMe.socialLinks.map(endpoint => renderSocialIcon(endpoint))
       }
     </View>
+    <Divider style={{ backgroundColor: 'gray', marginVertical: 5 }} />
     <ScrollView>
       <Text style={styles.bio}>
         {aboutMe.bio.map(para => para.replace(/\s+/g, ' ').trim()).join('\n\n')}
