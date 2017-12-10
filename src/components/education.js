@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet, Text, ScrollView } from 'react-native';
+import Hyperlink from 'react-native-hyperlink';
 
 const ncsuLogo = require('../resources/images/ncsu_logo.png');
 
@@ -21,22 +22,29 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginVertical: 5,
   },
+  link: {
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
 });
 
-const edPoints =
-[
+const edPoints = [
   'Bachelor of Science in Engineering with a concentration in Mechatronics',
   'Attended 2003 - 2007',
-  'Worked with a team to develop a solar water heater that tracked the sun.',
 ];
 
 const EducationView = () => (
   <ScrollView style={styles.container}>
     <Image source={ncsuLogo} style={styles.ncsu} />
-    {
-      edPoints.map(point => <Text key={point} style={styles.text} >{`\u2023 ${point}`}</Text>)
-    }
-
+    {edPoints.map(point => <Text key={point} style={styles.text}>{`\u2023 ${point}`}</Text>)}
+    <Hyperlink
+      linkDefault
+      linkText={'\u2023 Worked with a team to develop a solar water heater that tracked the sun.'}
+    >
+      <Text style={[styles.text, styles.link]}>
+        http://water-heaters.blogspot.com/2007/05/students-use-solar-water-heater.html
+      </Text>
+    </Hyperlink>
   </ScrollView>
 );
 
