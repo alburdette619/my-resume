@@ -1,7 +1,24 @@
 import React from 'react';
 import { Dimensions, Image, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { SimpleLineIcons } from '@expo/vector-icons';
+import { Icon } from 'react-native-elements';
+
+const { width } = Dimensions.get('window');
+
+const styles = {
+  slide: {
+    width, flex: 1,
+  },
+  imageText: {
+    position: 'absolute',
+    color: 'white',
+    fontSize: 20,
+    backgroundColor: 'rgba(169, 169, 169, 0.7)',
+    width,
+    bottom: 0,
+    paddingLeft: 10,
+  },
+};
 
 const chainReactSource = require('../resources/images/chain_react.jpg');
 const crossfitSource = require('../resources/images/crossfit.jpg');
@@ -17,7 +34,9 @@ const slides = [
   { title: 'Fitness! 💪', source: fitnessSource },
 ];
 
-const { width } = Dimensions.get('window');
+const renderSwiperButtons = iconName => (
+  <Icon name={iconName} size={32} color="white" type="simple-line-icon" />
+);
 
 const Header = () => (
   <Swiper
@@ -25,27 +44,18 @@ const Header = () => (
     autoplay
     autoplayTimeout={5}
     showsPagination={false}
-    nextButton={<SimpleLineIcons name="arrow-right" size={32} color="white" />}
-    prevButton={<SimpleLineIcons name="arrow-left" size={32} color="white" />}
+    nextButton={renderSwiperButtons('arrow-right')}
+    prevButton={renderSwiperButtons('arrow-left')}
   >
     {
       slides.map(slide => (
-        <View key={Date.now()} style={{ width, flex: 1 }}>
+        <View key={Date.now()} style={styles.slide}>
           <Image
             source={slide.source}
             resizeMode="stretch"
-            style={{ width, flex: 1 }}
+            style={styles.slide}
           />
-          <Text style={{
-            position: 'absolute',
-            color: 'white',
-            fontSize: 20,
-            backgroundColor: 'rgba(169, 169, 169, 0.7)',
-            width,
-            bottom: 0,
-          }}
-          >{slide.title}
-          </Text>
+          <Text style={styles.imageText}>{slide.title}</Text>
         </View>
       ))
     }
