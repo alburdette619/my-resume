@@ -3,6 +3,8 @@ import { Divider, SocialIcon } from 'react-native-elements';
 import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 import aboutMe from '../resources/data/aboutMe';
 
+const socialIconWidth = 52;
+
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 10,
@@ -18,6 +20,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    alignSelf: 'center',
   },
   bio: {
     fontSize: 16,
@@ -43,7 +46,7 @@ const AboutMeView = () => (
       aboutMe.professionalLinks.map(endpoint => renderSocialIcon(endpoint))
       }
     </View>
-    <View style={[styles.socialContainer, { width: '58.5%', alignSelf: 'center' }]}>
+    <View style={[styles.socialContainer, { marginHorizontal: socialIconWidth }]}>
       {
       aboutMe.socialLinks.map(endpoint => renderSocialIcon(endpoint))
       }
